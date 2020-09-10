@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Handlee', cursive;
+  }
+
+body {
+    background-color: rgb(248, 241, 229);
+}
+
+
+
+input {
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: red;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.location-div::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    right: 15%;
+    bottom: 88%;
+    border: 1px solid blue;
+  }
