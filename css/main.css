@@ -6,7 +6,9 @@
   }
 
 body {
-    background-color: rgb(248, 241, 229);
+    /*background-color: rgb(248, 241, 229);*/
+    background-color: blueviolet;
+    margin: 2rem;
 }
 
 
@@ -24,12 +26,3 @@ input {
   background: none;
   outline: none;
 }
-
-.location-div::after {
-    content: "";
-    position: absolute;
-    left: 5%;
-    right: 15%;
-    bottom: 88%;
-    border: 1px solid blue;
-  }

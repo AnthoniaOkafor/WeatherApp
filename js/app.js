@@ -1,8 +1,7 @@
 const firstForm = document.querySelector(".first-form");
 const apiKey = 'a33ec5059bb874db8076287c5a7a5819';
 const apisection = document.querySelector(".api-section");
-
-
+const form = document.querySelector(".first-form");
 
 firstForm.addEventListener("submit", e => {
 //firstForm.onsubmit= (e) => {
@@ -19,7 +18,9 @@ firstForm.addEventListener("submit", e => {
     .then(response => response.json())
     .then(data => {
         const {main, name, sys, weather} = data;
-        const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png}`;
+        const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+
+        //const icon = 'https://openweathermap.org/img/wn/' + weather[0]["icon"] + '@2x.png';
         
         
         const markup = `
@@ -38,12 +39,14 @@ firstForm.addEventListener("submit", e => {
 
         apisection.innerHTML = markup;
 
-        //msg.textContent = "";
-        //form.reset();
-        //input.focus();
+        
     })
 
     .catch(() => {
         msg.innerHTML = "Please search for a valid city 😩";
     });
+
+    msg.textContent = "";
+    form.reset();
+    //input.focus();
 });
