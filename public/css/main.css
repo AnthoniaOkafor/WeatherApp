@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Handlee', cursive;
+  }
+
+body {
+    /*background-color: rgb(248, 241, 229);*/
+    background-color: blueviolet;
+    margin: 2rem;
+}
+
+
+
+input {
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: red;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+}

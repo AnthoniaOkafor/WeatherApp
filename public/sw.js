@@ -17,7 +17,6 @@ self.addEventListener('install', (e) => {
 });
 
 //Call Activate event
-/*
 self.addEventListener('activate', (e) => {
     console.log('Service Worker: Activated');
     //Remove unwanted caches
@@ -34,7 +33,7 @@ self.addEventListener('activate', (e) => {
         })
     )
 })
-*/
+
 
 /* Serve cached content when offline */ 
 self.addEventListener('fetch', e => {
