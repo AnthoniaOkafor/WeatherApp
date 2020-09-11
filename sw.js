@@ -1,13 +1,14 @@
 var cacheName = 'weather-app';
 var filesToCache = [
-    'index.html',
-    '/css/style.css',
+    '/',
+    '/index.html',
+    '/css/main.css',
     '/js/app.js',
     '/js/main.js'
 ];
 
 //Call Install event
-self.addEventListener('install', (e) => {
+self.addEventListener('install', e => {
     e.waitUntil(caches.open(cacheName)
         .then (cache => {
             return cache.addAll(filesToCache)
@@ -18,7 +19,7 @@ self.addEventListener('install', (e) => {
 
 //Call Activate event
 /*
-self.addEventListener('activate', (e) => {
+self.addEventListener('activate', e => {
     console.log('Service Worker: Activated');
     //Remove unwanted caches
     e.waitUntil(

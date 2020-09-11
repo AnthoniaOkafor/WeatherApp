@@ -43,7 +43,7 @@ firstForm.addEventListener("submit", e => {
     })
 
     .catch(() => {
-        msg.innerHTML = "Please search for a valid city 😩";
+        msg.innerHTML = "Please search for a valid city or connect to the internet 😩";
     });
 
     msg.textContent = "";
