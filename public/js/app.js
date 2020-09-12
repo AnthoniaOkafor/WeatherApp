@@ -3,6 +3,7 @@ const apiKey = 'a33ec5059bb874db8076287c5a7a5819';
 const apisection = document.querySelector(".api-section");
 const form = document.querySelector(".first-form");
 
+
 firstForm.addEventListener("submit", e => {
 //firstForm.onsubmit= (e) => {
     e.preventDefault();
@@ -10,10 +11,12 @@ firstForm.addEventListener("submit", e => {
     //const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=metric`;
     
     let inputValue = document.querySelector(".location").value;
+    
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`;
     console.log(inputValue);
     let msg = document.querySelector(".msg");
 
+    //fetching goes here
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -34,16 +37,30 @@ firstForm.addEventListener("submit", e => {
                 <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
                 <figcaption>${weather[0]["description"]}</figcaption>
             </figure>`;
-        
-
 
         apisection.innerHTML = markup;
 
+        //localstorage starts here
+        const key = inputValue;
+        const value = apisection.innerHTML;
+
+        if (key && value) {
+            localStorage.setItem(key, value);
+        }  
         
     })
 
     .catch(() => {
-        msg.innerHTML = "Please search for a valid city or connect to the internet 😩";
+
+        const key = inputValue;
+
+        if (key in localStorage) {
+            apisection.innerHTML = localStorage.getItem(key);
+        }
+        else {
+            msg.innerHTML = "Please search for a valid city or connect to the internet 😩";
+        }
+
     });
 
     msg.textContent = "";

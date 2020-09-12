@@ -1,0 +1,21 @@
+{
+    "name": "Twinkle Weather App",
+    "short_name": "Twinkle",
+    "start_url": "/",
+    "background_color": "#3498DB",
+    "theme_color": "34495E",
+    "orientation": "portrait-primary",
+    "display": "standalone",
+
+
+    "dir": "ltr",
+    "lang": "en-US",
+    "description": "A weather app that allows you to have real-time information on weather condition of different cities",
+    "scope": "/",
+    "serviceworker": {
+        "src": "path/to/sw.js",
+        "scope": "/"
+    },
+
+    "icons": []
+}
