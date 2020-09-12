@@ -55,7 +55,7 @@ firstForm.addEventListener("submit", e => {
         const key = inputValue;
 
         if (key in localStorage) {
-            apisection.innerHTML = localStorage.getItem(key);
+            apisection.innerHTML = localStorage.getItem(key)
         }
         else {
             msg.innerHTML = "Please search for a valid city or connect to the internet 😩";

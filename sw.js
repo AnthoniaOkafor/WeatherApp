@@ -4,7 +4,8 @@ var filesToCache = [
     '/index.html',
     '/css/main.css',
     '/js/app.js',
-    '/js/main.js'
+    '/js/main.js',
+    '/site.webmanifest'
 ];
 
 //Call Install event
