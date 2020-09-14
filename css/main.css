@@ -86,16 +86,22 @@ button {
   
 .input-section {
   width: 100%;
-  background-color: blue;
+  background-color: green;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
 .input-section .first-form {
-  width: 80%;
-  background-color: green;
+  width: 70%;
   flex-direction: column; 
+}
+
+.input-button {
+  margin: 1rem 0 0 0;
+  background-color: white;
+  width: 95%; 
+  display: flex;
 }
 
 .msg {
@@ -105,21 +111,24 @@ button {
 
 
 
-.input-button {
-  display: flex;  
- 
-}
-
 .smallscreenbtn {
   display: block;
+  margin-left: auto;
+  background: orange;
+  outline: none;
+  border: none;
 }
+
+  .smallscreenbtn:active { 
+    transform: translateY(1px);
+  }
 
 .bigscreenbtn {
   display: none;
 }
 
 .location {
-  background: white;
+  background: none;
   outline: none;
   border: none;
   height: 2rem;

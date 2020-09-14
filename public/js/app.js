@@ -12,7 +12,7 @@ firstForm.addEventListener("submit", e => {
     
     let inputValue = document.querySelector(".location").value;
     
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}&units=imperial`;
     console.log(inputValue);
     let msg = document.querySelector(".msg");
 
@@ -31,12 +31,14 @@ firstForm.addEventListener("submit", e => {
                 <span>${name}</span>
                 <sup>${sys.country}</sup>
             </h2>
-            <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup>
+            <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup> | ${Math.round((main.temp - 32) * (5/9))} <sup>°C</sup>
             </div>
             <figure>
                 <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
                 <figcaption>${weather[0]["description"]}</figcaption>
-            </figure>`;
+            </figure>
+            <div class="details">
+            </div>`;
 
         apisection.innerHTML = markup;
 
@@ -55,13 +57,15 @@ firstForm.addEventListener("submit", e => {
         const key = inputValue;
 
         if (key in localStorage) {
-            apisection.innerHTML = localStorage.getItem(key);
+            apisection.innerHTML = localStorage.getItem(key)
         }
         else {
             msg.innerHTML = "Please search for a valid city or connect to the internet 😩";
         }
 
     });
+
+
 
     msg.textContent = "";
     apisection.innerHTML = "";
